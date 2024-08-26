@@ -1,6 +1,5 @@
 package com.ohgiraffers.himediachap14mvc.common.jdbc;
 
-//import com.ohgiraffers.mvc.common.config.ConfigLocation;
 import com.ohgiraffers.himediachap14mvc.common.config.ConfigLocation;
 
 
