@@ -2,7 +2,7 @@ package com.ohgiraffers.himediachap14mvc.employee.model.dto;
 
 import java.sql.Date;
 
-public class EmployDTO {
+public class EmployeeDTO {
 
     private String empId;
     private String empName;
@@ -19,10 +19,10 @@ public class EmployDTO {
     private Date entDate;
     private String entYn;
 
-    public EmployDTO() {
+    public EmployeeDTO() {
     }
 
-    public EmployDTO(String empId, String empName, String empNo, String email, String phone, String deptCode, String jobCode, String salLevel, int salary, double bonus, String managerId, Date hireDate, Date entDate, String entYn) {
+    public EmployeeDTO(String empId, String empName, String empNo, String email, String phone, String deptCode, String jobCode, String salLevel, int salary, double bonus, String managerId, Date hireDate, Date entDate, String entYn) {
         this.empId = empId;
         this.empName = empName;
         this.empNo = empNo;
