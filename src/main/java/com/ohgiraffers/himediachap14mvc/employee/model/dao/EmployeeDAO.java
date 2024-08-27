@@ -3,7 +3,6 @@ package com.ohgiraffers.himediachap14mvc.employee.model.dao;
 import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 
 import java.sql.Connection;
-<<<<<<< HEAD
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -26,12 +25,6 @@ public class EmployeeDAO {
 
 
         return null;
-=======
-
-public class EmployeeDAO {
-    public static EmployeeDTO selectOneId(Connection connection, String empId) {
-
->>>>>>> 904815f2549a0ef0245ffe7e8dfd39ac7ef0866b
 
     }
 }
