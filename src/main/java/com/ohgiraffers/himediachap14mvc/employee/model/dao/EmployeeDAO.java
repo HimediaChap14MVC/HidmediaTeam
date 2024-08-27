@@ -42,7 +42,7 @@ public class EmployeeDAO {
 
             resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()) {
+            if(resultSet.next()) {
 
                 selectedEmpId = new EmployeeDTO();
 
@@ -56,11 +56,14 @@ public class EmployeeDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+
+            close(resultSet);
+            close(connection);
         }
-
-
-        return null;
+        return  selectedEmpId;
     }
+
 
 
     public String selectNewEmpId(Connection con) {
