@@ -27,4 +27,20 @@ public class EmployeeDAO {
         return null;
 
     }
+
+    public EmployeeDTO selectOneId(Connection connection, String empId) {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        EmployeeDTO selectedEmpId = null;
+
+        String query = prop.getProperty("selectEmpById");
+
+        preparedStatement = connection.prepareStatement()
+
+        return  null;
+    }
+
+
 }
