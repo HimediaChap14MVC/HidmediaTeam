@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Main Title</title>
 </head>
 <body>
 <%-- 헤더 위치 --%>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="/views/common/header.jsp"/>
 
 <hr>
 
