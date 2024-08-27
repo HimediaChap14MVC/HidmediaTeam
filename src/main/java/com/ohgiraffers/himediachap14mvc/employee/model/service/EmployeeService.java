@@ -1,13 +1,17 @@
 package com.ohgiraffers.himediachap14mvc.employee.model.service;
 
-import com.ohgiraffers.himediachap14mvc.employee.model.dao.EmployeeDAO;
+import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
+
+import java.util.List;
 
 public class EmployeeService {
 
-    EmployeeDAO employeeDAO = new EmployeeDAO();
+    EmployeeDTO employeeDTO = new EmployeeDTO();
 
     public EmployeeService() {
     }
 
-    public List<Emp>
+    public List<EmployeeDTO> SelectAllEmp() {
+
+    }
 }
