@@ -29,7 +29,7 @@ public class EmployeeDAO {
     }
 
 
-    public EmployeeDTO selectOneId(Connection connection, String empId) {
+    public EmployeeDTO selectOneEmployeeID(Connection connection, String empId) {
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -38,10 +38,34 @@ public class EmployeeDAO {
 
         String query = prop.getProperty("selectEmpById");
 
-        preparedStatement = connection.prepareStatement()
+        try {
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, empId);
+
+            resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()) {
+
+                selectedEmpId = new EmployeeDTO();
+
+                selectedEmpId.setEmpId(resultSet.getString("EMP_ID"));
+                selectedEmpId.setEmpName(resultSet.getString("EMP_NAME"));
+                selectedEmpId.setDeptCode(resultSet.getString("DEPT_CODE"));
+                selectedEmpId.setJobCode(resultSet.getString("JOB_CODE"));
+                selectedEmpId.setSalary(resultSet.getInt("SALARY"));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
         return  null;
     }
+
+
+}
 
     public int updateEmp(Connection con, EmployeeDTO emp) {
         PreparedStatement pstmt = null;
