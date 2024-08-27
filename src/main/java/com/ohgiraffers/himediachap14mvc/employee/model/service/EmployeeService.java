@@ -1,6 +1,5 @@
 package com.ohgiraffers.himediachap14mvc.employee.model.service;
 
-import com.ohgiraffers.himediachap14mvc.common.jdbc.JDBCTemplate;
 import com.ohgiraffers.himediachap14mvc.employee.model.dao.EmployeeDAO;
 import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 
@@ -28,5 +27,10 @@ public class EmployeeService {
         List<EmployeeDTO> employeeDTOList = employeeDAO.selectAllEmlList(connection);
 
         return employeeDTOList;
+    }
+
+    public EmployeeDTO selectOneEmployeeID(String empId) {
+        return null;
+
     }
 }
