@@ -1,29 +1,31 @@
 package com.ohgiraffers.himediachap14mvc.employee.model.dto;
 
-public class EmployeeDTO {
+import java.sql.Date;
 
-    String id;
-    String name;
-    String no;
-    String email;
-    String phone;
-    String deptCode;
-    String jobCode;
-    String salLevel;
-    String salary;
-    String bonus;
-    String managerId;
-    String hireDate;
-    String entDate;
-    String entYn;
+public class EmployDTO {
 
-    public EmployeeDTO() {
+    private String empId;
+    private String empName;
+    private String empNo;
+    private String email;
+    private String phone;
+    private String deptCode;
+    private String jobCode;
+    private String salLevel;
+    private int salary;
+    private double bonus;
+    private String managerId;
+    private Date hireDate;
+    private Date entDate;
+    private String entYn;
+
+    public EmployDTO() {
     }
 
-    public EmployeeDTO(String id, String name, String no, String email, String phone, String deptCode, String jobCode, String salLevel, String salary, String bonus, String managerId, String hireDate, String entDate, String entYn) {
-        this.id = id;
-        this.name = name;
-        this.no = no;
+    public EmployDTO(String empId, String empName, String empNo, String email, String phone, String deptCode, String jobCode, String salLevel, int salary, double bonus, String managerId, Date hireDate, Date entDate, String entYn) {
+        this.empId = empId;
+        this.empName = empName;
+        this.empNo = empNo;
         this.email = email;
         this.phone = phone;
         this.deptCode = deptCode;
@@ -37,28 +39,28 @@ public class EmployeeDTO {
         this.entYn = entYn;
     }
 
-    public String getId() {
-        return id;
+    public String getEmpId() {
+        return empId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmpId(String empId) {
+        this.empId = empId;
     }
 
-    public String getName() {
-        return name;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmpName(String empName) {
+        this.empName = empName;
     }
 
-    public String getNo() {
-        return no;
+    public String getEmpNo() {
+        return empNo;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setEmpNo(String empNo) {
+        this.empNo = empNo;
     }
 
     public String getEmail() {
@@ -101,19 +103,19 @@ public class EmployeeDTO {
         this.salLevel = salLevel;
     }
 
-    public String getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public String getBonus() {
+    public double getBonus() {
         return bonus;
     }
 
-    public void setBonus(String bonus) {
+    public void setBonus(double bonus) {
         this.bonus = bonus;
     }
 
@@ -125,19 +127,19 @@ public class EmployeeDTO {
         this.managerId = managerId;
     }
 
-    public String getHireDate() {
+    public Date getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(String hireDate) {
+    public void setHireDate(Date hireDate) {
         this.hireDate = hireDate;
     }
 
-    public String getEntDate() {
+    public Date getEntDate() {
         return entDate;
     }
 
-    public void setEntDate(String entDate) {
+    public void setEntDate(Date entDate) {
         this.entDate = entDate;
     }
 
@@ -151,20 +153,20 @@ public class EmployeeDTO {
 
     @Override
     public String toString() {
-        return "EmployeeDAO{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", no='" + no + '\'' +
+        return "EmployDTO{" +
+                "empId='" + empId + '\'' +
+                ", empName='" + empName + '\'' +
+                ", empNo='" + empNo + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", deptCode='" + deptCode + '\'' +
                 ", jobCode='" + jobCode + '\'' +
                 ", salLevel='" + salLevel + '\'' +
-                ", salary='" + salary + '\'' +
-                ", bonus='" + bonus + '\'' +
+                ", salary=" + salary +
+                ", bonus=" + bonus +
                 ", managerId='" + managerId + '\'' +
-                ", hireDate='" + hireDate + '\'' +
-                ", entDate='" + entDate + '\'' +
+                ", hireDate=" + hireDate +
+                ", entDate=" + entDate +
                 ", entYn='" + entYn + '\'' +
                 '}';
     }
