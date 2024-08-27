@@ -33,4 +33,9 @@ public class EmployeeService {
         return null;
 
     }
+
+    public String selectNewEmpId() {
+
+        return null;
+    }
 }
