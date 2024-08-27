@@ -90,4 +90,22 @@ public class EmployeeService {
 
         return result;
     }
+
+
+    public int deleteEmp(String empId) {
+
+        Connection con = getConnection();
+
+        int result = employeeDAO.deleteEmp(con, empId);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
+    }
 }

@@ -1,4 +1,32 @@
 package com.ohgiraffers.himediachap14mvc.employee.controller;
 
-public class DeleteEmpServlet {
+import com.ohgiraffers.himediachap14mvc.employee.model.service.EmployeeService;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/employee/delete")
+public class DeleteEmpServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String empId = request.getParameter("empId");
+
+        int result = new EmployeeService().deleteEmp(empId);
+
+        String path = "";
+        if(result > 0) {
+            path = "/WEB-INF/views/common/successPage.jsp";
+            request.setAttribute("successCode", "deleteEmp");
+        } else {
+            path = "/WEB-INF/views/common/errorPage.jsp";
+            request.setAttribute("message", "직원 삭제 실패!");
+        }
+
+        request.getRequestDispatcher(path).forward(request, response);
+    }
+
 }
