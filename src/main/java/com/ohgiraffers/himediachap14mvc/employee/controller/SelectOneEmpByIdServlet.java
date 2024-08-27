@@ -26,7 +26,7 @@ public class SelectOneEmpByIdServlet extends HttpServlet {
         /*1. 서비스 객체 생성*/
         EmployeeService employeeService = new EmployeeService();
         /*DTO타입으로 변수명 생성 후  서비스 영역에 메소드 추가하기*/
-        EmployeeDTO selectOneId = employeeService.selectOneEmplyeeID(empId);
+        EmployeeDTO selectOneId = employeeService.selectOneEmployeeID(empId);
 
         System.out.println("selectOneId = " + selectOneId);
         /*뷰로 전송하기*/
