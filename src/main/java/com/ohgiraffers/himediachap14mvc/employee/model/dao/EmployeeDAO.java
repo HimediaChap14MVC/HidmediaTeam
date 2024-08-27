@@ -1,5 +1,6 @@
 package com.ohgiraffers.himediachap14mvc.employee.model.dao;
 
+import com.ohgiraffers.himediachap14mvc.employee.controller.UpdateEmpServlet;
 import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 
 import java.sql.Connection;
@@ -28,6 +29,7 @@ public class EmployeeDAO {
 
     }
 
+
     public EmployeeDTO selectOneId(Connection connection, String empId) {
 
         PreparedStatement preparedStatement = null;
@@ -42,5 +44,11 @@ public class EmployeeDAO {
         return  null;
     }
 
+
+
+
+    public int updateEmp(Connection con, EmployeeDTO emp) {
+        return 0;
+    }
 
 }

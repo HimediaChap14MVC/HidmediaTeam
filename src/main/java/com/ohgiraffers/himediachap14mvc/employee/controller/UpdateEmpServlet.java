@@ -1,5 +1,6 @@
 package com.ohgiraffers.himediachap14mvc.employee.controller;
 
+import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 import com.ohgiraffers.himediachap14mvc.employee.model.service.EmployeeService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,6 +17,9 @@ public class UpdateEmpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String empId = req.getParameter("empId");
+        java.sql.Date entDate = java.sql.Date.valueOf(req.getParameter("empId"));
+
+        EmployeeDTO emp = new EmployeeDTO();
         emp.setEmpId(empId);
         emp.setEntDate(entDate);
 

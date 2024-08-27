@@ -6,7 +6,7 @@ import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 import java.sql.Connection;
 import java.util.List;
 
-import static com.ohgiraffers.himediachap14mvc.common.jdbc.JDBCTemplate.getConnection;
+import static com.ohgiraffers.himediachap14mvc.common.jdbc.JDBCTemplate.*;
 
 public class EmployeeService {
 
@@ -37,5 +37,19 @@ public class EmployeeService {
     public String selectNewEmpId() {
 
         return null;
+    }
+
+
+    public int updateEmp(EmployeeDTO emp) {
+        Connection con = getConnection();
+        int result = employeeDAO.updateEmp(con, emp);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+        close(con);
+        return result;
     }
 }
