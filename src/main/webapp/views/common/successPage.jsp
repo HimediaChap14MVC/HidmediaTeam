@@ -29,7 +29,7 @@
 
             alert(successMessage);
             location.href = movePath;
-        })
+        })();
     </script>
 </body>
 </html>

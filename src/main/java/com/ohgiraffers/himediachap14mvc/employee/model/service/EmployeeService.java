@@ -36,7 +36,18 @@ public class EmployeeService {
 
     public String selectNewEmpId() {
 
-        return null;
+        /* Connection 생성 */
+        Connection con = getConnection();
+
+        /* 비지니스 로직 */
+        /* 1. dao 호출하여 조회 */
+        String newEmpId = employeeDAO.selectNewEmpId(con);
+
+        /* Connection 닫기 */
+        close(con);
+
+        /* 수행 결과 반환 */
+        return newEmpId;
     }
 
 
@@ -54,6 +65,19 @@ public class EmployeeService {
     }
 
     public int insertEmp(EmployeeDTO emp) {
-        return 0;
+
+        Connection con = getConnection();
+
+        int result = employeeDAO.insertEmp(con, emp);
+
+        if (result > 0) {
+            commit(con);
+        } else {
+            rollback(con);
+        }
+
+        close(con);
+
+        return result;
     }
 }
