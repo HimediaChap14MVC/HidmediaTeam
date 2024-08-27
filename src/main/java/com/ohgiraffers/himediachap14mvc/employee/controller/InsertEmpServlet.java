@@ -1,5 +1,6 @@
 package com.ohgiraffers.himediachap14mvc.employee.controller;
 
+import com.ohgiraffers.himediachap14mvc.employee.model.dto.EmployeeDTO;
 import com.ohgiraffers.himediachap14mvc.employee.model.service.EmployeeService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -30,5 +31,36 @@ public class InsertEmpServlet extends HttpServlet {
         EmployeeService empService = new EmployeeService();
         String newEmpId = empService.selectNewEmpId();
 
+        EmployeeDTO emp = new EmployeeDTO();
+        if(newEmpId != null) emp.setEmpId(newEmpId);
+        emp.setEmpName(empName);
+        emp.setEmpNo(empNo);
+        emp.setEmail(email);
+        emp.setPhone(phone);
+        emp.setDeptCode(deptCode);
+        emp.setJobCode(jobCode);
+        emp.setSalLevel(salLevel);
+        emp.setSalary(salary);
+        emp.setBonus(bonus);
+        emp.setManagerId(managerId);
+        emp.setHireDate(hireDate);
+
+        System.out.println("insert request emp : " + emp);
+
+        int result = empService.insertEmp(emp);
+
+        String path = "";
+        if(result > 0) {
+            path = "/webapp/views/common/successPage.jsp";
+//			request.setAttribute("message", "신규 직원 등록에 성공하셨습니다.");
+//			response.sendRedirect(request.getContextPath() + "/WEB-INF/views/common/successPage.jsp");
+
+            req.setAttribute("successCode", "insertEmp");
+        } else {
+            path = "/webapp/views/common/errorPage.jsp";
+            req.setAttribute("message", "신규 직원 등록에 실패하셨습니다.");
+        }
+
+        req.getRequestDispatcher(path).forward(req, resp);
     }
 }

@@ -52,4 +52,8 @@ public class EmployeeService {
         close(con);
         return result;
     }
+
+    public int insertEmp(EmployeeDTO emp) {
+        return 0;
+    }
 }
