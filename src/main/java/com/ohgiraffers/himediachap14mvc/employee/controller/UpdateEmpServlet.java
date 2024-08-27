@@ -17,11 +17,11 @@ public class UpdateEmpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String empId = req.getParameter("empId");
-        java.sql.Date entDate = java.sql.Date.valueOf(req.getParameter("empId"));
+        String phone = req.getParameter("empId");
 
         EmployeeDTO emp = new EmployeeDTO();
         emp.setEmpId(empId);
-        emp.setEntDate(entDate);
+        emp.setPhone(phone);
 
         int result = new EmployeeService().updateEmp(emp);
 
@@ -31,7 +31,7 @@ public class UpdateEmpServlet extends HttpServlet {
             req.setAttribute("success", "updateEmp");
         } else {
             path = "webapp/views/common/errorPage.jsp";
-            req.setAttribute("error", "퇴사여부수정실패");
+            req.setAttribute("error", "연락처수정실패");
         }
         req.getRequestDispatcher(path).forward(req, resp);
     }
